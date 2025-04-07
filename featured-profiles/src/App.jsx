@@ -11,23 +11,30 @@ export default function App() {
       {/* Hero Carousel */}
       <section className="w-full">
         <div className="h-64 md:h-96">
-          <Carousel slideInterval={4000} className="rounded-none">
-            <img src="/sample-image.webp" alt="Slide 1" className="w-full h-full object-cover" />
-            <div className="flex items-center justify-center h-full bg-blue-100">
-              <div className="text-center">
-                <h2 className="text-3xl md:text-5xl font-bold text-gray-800">Featured Profiles</h2>
-                <p className="text-lg md:text-xl text-gray-600">
-                  Curated with care to spark meaningful connections
-                </p>
-              </div>
-            </div>
-            <div className="flex h-full items-center justify-center gap-4 bg-white px-4">
-              <img src="/sample-image.webp" className="w-1/2 object-contain" alt="Slide 3" />
-              <p className="text-xl max-w-md text-gray-700">
-                Meet individuals with shared passions and inspiring stories.
-              </p>
-            </div>
-          </Carousel>
+        <Carousel
+  slideInterval={4000}
+  leftControl={
+    <span className="text-6xl text-white hover:text-black cursor-pointer px-4">‹</span>
+  }
+  rightControl={
+    <span className="text-6xl text-white hover:text-black cursor-pointer px-4">›</span>
+  }
+>
+  <img src="/sample-image.webp" alt="Slide 1" className="w-full h-full object-cover bg-green-200" />
+
+  <div className="flex items-center justify-center h-full bg-blue-200 px-4 text-center text-white">
+    <div className='text-white'>
+      <h2 className="text-3xl md:text-5xl font-bold">Featured Profiles</h2>
+      <p className="text-lg md:text-xl">Curated with care to spark meaningful connections</p>
+    </div>
+  </div>
+
+  <div className="flex flex-col md:flex-row h-full items-center justify-center gap-4 px-4 bg-red-300 text-white">
+    <img src="/sample-image.webp" className="w-full md:w-1/2 object-contain" alt="Slide 3" />
+    <p className="text-xl max-w-md text-center md:text-left">Meet individuals with shared passions and inspiring stories.</p>
+  </div>
+</Carousel>
+
         </div>
       </section>
 
